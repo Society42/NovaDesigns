@@ -1,0 +1,160 @@
+body {
+  font-family: "Arial", sans-serif;
+  margin: 0;
+  padding: 0;
+  background-color: #222;
+  color: #fff;
+}
+
+.container {
+  display: flex;
+  justify-content: space-between;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 20px;
+  box-sizing: border-box;
+}
+
+.sidebar {
+  background-color: #333;
+  padding: 20px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  width: 30%;
+}
+
+.header-content {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 20px;
+}
+
+.tech-logo {
+  max-width: 80px;
+  margin-right: 10px;
+  border-radius: 100%;
+  border: solid 2px white;
+}
+
+h1,
+h2,
+p {
+  margin: 0;
+}
+
+h1 {
+  color: #4285f4; /* Google Blue */
+}
+
+h2 {
+  color: #fff;
+}
+
+p {
+  color: #777;
+}
+
+#search-input {
+  padding: 10px;
+  width: 100%;
+  margin-bottom: 20px;
+  border-radius: 5px;
+  border: 1px solid #ccc;
+  background-color: #444;
+  color: #fff;
+  box-sizing: border-box;
+}
+
+#gallery {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+#article-container,
+#article-details {
+  background-color: #333;
+  padding: 20px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  border-radius: 5px;
+  margin-bottom: 20px;
+}
+
+.content {
+  width: 65%;
+}
+
+.buttons {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 20px;
+}
+
+.button {
+  padding: 10px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+.home-button {
+  background-color: #4285f4; /* Google Blue */
+  color: #fff;
+}
+
+.button {
+  background-color: #0f9d58; /* Google Green */
+  color: #fff;
+  margin-left: 10px;
+}
+
+.button:hover {
+  background-color: #0e9e99;
+}
+
+/* Improved visibility for guides */
+.article {
+  margin-bottom: 20px;
+  padding: 20px;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s;
+  background-color: #222;
+  border: solid white 2px;
+}
+
+.article:hover {
+  background-color: #555;
+}
+
+.article h2 {
+  margin-top: 0;
+  color: #4285f4; /* Google Blue */
+}
+
+.article p {
+  margin-top: 5px;
+  color: #ccc;
+}
+
+.social-icons {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  margin-top: 20px;
+}
+
+.social-icons a {
+  text-decoration: none;
+  color: #fff;
+  font-size: 24px;
+}
+
+.social-icons a:hover {
+  color: #555;
+}
+
+.companyname {
+  text-align: center;
+}

@@ -1,0 +1,224 @@
+body {
+  font-family: Arial, sans-serif;
+  margin: 0;
+  padding: 0;
+  background-color: #f4f4f4; 
+  color: #333; 
+  transition: background-color 0.3s, color 0.3s;
+}
+
+header {
+  background-color: white;
+  padding: 20px;
+  color: black;
+  text-align: center;
+  transition: background-color 0.3s, color 0.3s;
+}
+
+.header-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+#title {
+  font-size: 24px;
+  margin: 0;
+}
+
+header nav a {
+  color: #fff;
+  text-decoration: none;
+  margin: 0 10px;
+}
+
+header nav a:hover {
+  text-decoration: underline;
+}
+
+#tech-groups {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 20px;
+  padding: 20px;
+}
+
+@media (min-width: 768px) {
+  #tech-groups {
+    grid-template-columns: 1fr 1fr;
+  }
+}
+
+@media (min-width: 1024px) {
+  #tech-groups {
+    grid-template-columns: 1fr 1fr 1fr;
+  }
+}
+
+.tech-group {
+  background-color: #fff;
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s, box-shadow 0.3s;
+  position: relative;
+}
+
+.tech-group:hover {
+  transform: translateY(-10px);
+}
+
+.tech-group-header {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.tech-group img {
+  width: 50px;
+  height: auto;
+  border-radius: 10px;
+}
+
+.tech-group h3 {
+  color: #333;
+  margin: 0;
+}
+
+.tech-group p {
+  color: #666;
+  margin: 10px 0;
+}
+
+.tech-group button {
+  background-color: #007bff;
+  color: #fff;
+  border: none;
+  padding: 10px 20px;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+.tech-group button:hover {
+  background-color: #0056b3;
+}
+
+.featured-notice {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  background-color: #ff5722;
+  color: #fff;
+  padding: 5px 10px;
+  border-radius: 5px;
+  font-weight: bold;
+}
+
+#about,
+#our-team {
+  padding: 20px;
+}
+
+#about p,
+#our-team p {
+  color: #333;
+  line-height: 1.6;
+}
+
+.team-member {
+  background-color: #fff;
+  margin: 10px 0;
+  padding: 10px;
+  border-radius: 10px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+.team-member h3 {
+  margin: 0;
+  color: #007bff;
+}
+
+.team-member p {
+  margin: 5px 0;
+  color: #666;
+}
+
+.profile-buttons {
+  display: flex;
+  gap: 10px;
+}
+
+.profile-button {
+  background-color: #333;
+  color: #fff;
+  padding: 5px 10px;
+  border-radius: 5px;
+  text-decoration: none;
+  display: inline-flex;
+  align-items: center;
+  transition: background-color 0.3s;
+}
+
+.profile-button i {
+  margin-right: 5px;
+}
+
+.profile-button:hover {
+  background-color: #007bff;
+}
+
+footer {
+  background-color: white;
+  color: black;
+  text-align: center;
+  padding: 10px;
+  position: fixed;
+  bottom: 0;
+  width: 100%;
+}
+
+.header_button{
+        color: black;
+        }
+
+   /* Styles for the popup */
+    .popup {
+      display: none; /* Hidden by default */
+      position: fixed; /* Stay in place */
+      z-index: 1; /* Sit on top */
+      left: 0;
+      top: 0;
+      width: 100%; /* Full width */
+      height: 100%; /* Full height */
+      overflow: auto; /* Enable scroll if needed */
+      background-color: rgb(0,0,0); /* Fallback color */
+      background-color: rgba(0,0,0,0.4); /* Black w/ opacity */
+      padding-top: 60px;
+    }
+    .popup-content {
+      background-color: #fefefe;
+      margin: 5% auto;
+      padding: 20px;
+      border: 1px solid #888;
+      width: 80%;
+      max-width: 600px;
+      text-align: center;
+      position: relative;
+    }
+    .close {
+      color: #aaa;
+      float: right;
+      font-size: 28px;
+      font-weight: bold;
+    }
+    .close:hover,
+    .close:focus {
+      color: black;
+      text-decoration: none;
+      cursor: pointer;
+    }
+    #timer {
+      font-size: 24px;
+      margin-top: 20px;
+    }

@@ -1,0 +1,182 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Quiz</title>
+    <link rel="stylesheet" type="text/css" href="./styles/quiz.css">
+</head>
+<body>
+    <header>
+        <nav>
+            <a href="../index.html" class="header_button">Home</a>
+            <a href="./home.html" class="header_button">Minigames</a>
+        </nav>
+    </header>
+
+    <section class="quiz-container">
+        <h2 class="title">Roblox Quiz</h2>
+        <form id="quiz-form">
+            <div class="question active" data-question="1">
+                <h3>1. What is the virtual currency used in Roblox called?</h3>
+                <ul class="options">
+                    <li><label><input type="radio" name="q1" value="A">A) Robux</label></li>
+                    <li><label><input type="radio" name="q1" value="B">B) Roblox Bucks</label></li>
+                    <li><label><input type="radio" name="q1" value="C">C) RoCoins</label></li>
+                    <li><label><input type="radio" name="q1" value="D">D) Tix</label></li>
+                </ul>
+            </div>
+            <div class="question" data-question="2">
+                <h3>2. Which game studio created the popular game "Adopt Me!" on Roblox?</h3>
+                <ul class="options">
+                    <li><label><input type="radio" name="q2" value="A">A) DreamWorks</label></li>
+                    <li><label><input type="radio" name="q2" value="B">B) Roblox Studios</label></li>
+                    <li><label><input type="radio" name="q2" value="C">C) DreamCraft</label></li>
+                    <li><label><input type="radio" name="q2" value="D">D) MegaGames</label></li>
+                </ul>
+            </div>
+            <div class="question" data-question="3">
+                <h3>3. What is the maximum number of friends a player can have on Roblox?</h3>
+                <ul class="options">
+                    <li><label><input type="radio" name="q3" value="A">A) 100</label></li>
+                    <li><label><input type="radio" name="q3" value="B">B) 200</label></li>
+                    <li><label><input type="radio" name="q3" value="C">C) 500</label></li>
+                    <li><label><input type="radio" name="q3" value="D">D) 1000</label></li>
+                </ul>
+            </div>
+            <div class="question" data-question="4">
+                <h3>4. Which Roblox game is known for its heist and police chase theme?</h3>
+                <ul class="options">
+                    <li><label><input type="radio" name="q4" value="A">A) Jailbreak</label></li>
+                    <li><label><input type="radio" name="q4" value="B">B) Bloxburg</label></li>
+                    <li><label><input type="radio" name="q4" value="C">C) Murder Mystery 2</label></li>
+                    <li><label><input type="radio" name="q4" value="D">D) Royale High</label></li>
+                </ul>
+            </div>
+            <div class="question" data-question="5">
+                <h3>5. Which game on Roblox has held the title for the most visits?</h3>
+                <ul class="options">
+                    <li><label><input type="radio" name="q5" value="A">A) Jailbreak</label></li>
+                    <li><label><input type="radio" name="q5" value="B">B) Adopt Me</label></li>
+                    <li><label><input type="radio" name="q5" value="C">C) Brookhaven</label></li>
+                    <li><label><input type="radio" name="q5" value="D">D) MeepCity</label></li>
+                </ul>
+            </div>
+            <div class="question" data-question="6">
+                <h3>6. What is the name of the annual event where Roblox awards creators for their creations?</h3>
+                <ul class="options">
+                    <li><label><input type="radio" name="q6" value="A">A) Bloxy Awards</label></li>
+                    <li><label><input type="radio" name="q6" value="B">B) Roblox Innovation Awards</label></li>
+                    <li><label><input type="radio" name="q6" value="C">C) Roblox Developer Conference</label></li>
+                    <li><label><input type="radio" name="q6" value="D">D) DevEx Awards</label></li>
+                </ul>
+            </div>
+            <div class="question" data-question="7">
+                <h3>7. Who is the CEO of Roblox Corporation?</h3>
+                <ul class="options">
+                    <li><label><input type="radio" name="q7" value="A">A) Erik Cassel</label></li>
+                    <li><label><input type="radio" name="q7" value="B">B) David Baszucki</label></li>
+                    <li><label><input type="radio" name="q7" value="C">C) Mark Zuckerberg</label></li>
+                    <li><label><input type="radio" name="q7" value="D">D) Tim Sweeney</label></li>
+                </ul>
+            </div>
+            <h3>Your Score: <span id="score"></span>/7</h3>
+            <div id="result" style="display: none;">
+                <p>Your score is <span id="score"></span> out of 7.</p>
+                <button type="button" class="button" onclick="retakeQuiz()">Retake Quiz</button>
+            </div>
+            <button type="button" class="button" id="next-button" onclick="showNextQuestion()">Next</button>
+        </form>
+    </section>
+    <footer>
+        <p>&copy; 2024 Emergency Navigator. All rights reserved.</p>
+      </footer>
+    <script>
+        function setCookie(name, value) {
+            const d = new Date();
+            d.setFullYear(d.getFullYear() + 100); // Expires in 100 years
+            const expires = "expires=" + d.toUTCString();
+            document.cookie = name + "=" + value + ";" + expires + ";path=/";
+        }
+
+        function getCookie(name) {
+            const cname = name + "=";
+            const decodedCookie = decodeURIComponent(document.cookie);
+            const ca = decodedCookie.split(';');
+            for (let i = 0; i < ca.length; i++) {
+                let c = ca[i];
+                while (c.charAt(0) === ' ') {
+                    c = c.substring(1);
+                }
+                if (c.indexOf(cname) === 0) {
+                    return c.substring(cname.length, c.length);
+                }
+            }
+            return "";
+        }
+
+        function checkQuizScore() {
+            const score = getCookie("quizScore");
+            if (score !== "") {
+                document.getElementById("score").textContent = score;
+                document.getElementById("result").style.display = 'block';
+            }
+        }
+
+        function calculateResults() {
+            const quizForm = document.getElementById('quiz-form');
+            const scoreSpan = document.getElementById('score');
+            let score = 0;
+
+            const answers = {
+                q1: 'A',
+                q2: 'C',
+                q3: 'B',
+                q4: 'A',
+                q5: 'B',
+                q6: 'B',
+                q7: 'B'
+            };
+
+            for (let [question, correctAnswer] of Object.entries(answers)) {
+                const selectedAnswer = quizForm.querySelector(`input[name="${question}"]:checked`);
+                if (selectedAnswer && selectedAnswer.value === correctAnswer) {
+                    score++;
+                }
+            }
+
+            scoreSpan.textContent = score; 
+            setCookie("quizScore", score); 
+            document.getElementById("result").style.display = 'block'; 
+            document.getElementById("next-button").style.display = 'none';
+        }
+
+        function retakeQuiz() {
+            document.cookie = "quizScore=; expires=Thu, 01 Jan 1970 00:00:00 UTC; path=/;";
+            document.getElementById('quiz-form').reset();
+            document.getElementById("score").textContent = "";
+            document.getElementById("result").style.display = 'none';
+            document.querySelectorAll('.question').forEach((q, index) => {
+                q.style.display = index === 0 ? 'block' : 'none';
+            });
+            document.getElementById("next-button").style.display = 'block';
+        }
+
+        function showNextQuestion() {
+            const currentQuestion = document.querySelector('.question.active');
+            const nextQuestion = currentQuestion.nextElementSibling;
+
+            if (nextQuestion && nextQuestion.classList.contains('question')) {
+                currentQuestion.classList.remove('active');
+                nextQuestion.classList.add('active');
+            } else {
+                calculateResults();
+            }
+        }
+
+        window.onload = function() {
+            checkQuizScore();
+        };
+    </script>
+</body>
+</html>
