@@ -164,14 +164,6 @@
   </div>
 </section>
 
-  <div id="countdownPopup" class="popup">
-    <div class="popup-content">
-      <span class="close" onclick="closePopup()">&times;</span>
-      <h2>Countdown to Full Release</h2>
-      <div id="timer"></div>
-    </div>
-  </div>
-
   <footer>
     <p>&copy; 2024 Emergency Navigator. All rights reserved.</p>
   </footer>
@@ -183,51 +175,6 @@
       gtag('js', new Date());
       gtag('config', 'G-HXQ27KHD65');
     })();
-
-    (function() {
-      const timerElement = document.getElementById('timer');
-      
-      // Check if there is already a target time in local storage
-      let targetTime = localStorage.getItem('targetTime');
-
-      if (!targetTime) {
-        // If no target time, set it to 1 day from now
-        targetTime = new Date().getTime() + 1000 * 60 * 60 * 24;
-        localStorage.setItem('targetTime', targetTime);
-      } else {
-        targetTime = parseInt(targetTime, 10);
-      }
-
-      function updateCountdown() {
-        const now = new Date().getTime();
-        const distance = targetTime - now;
-
-        if (distance < 0) {
-          timerElement.innerHTML = "The full release is here!";
-          clearInterval(countdownInterval);
-          return;
-        }
-
-        const days = Math.floor(distance / (1000 * 60 * 60 * 24));
-        const hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
-        const minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
-        const seconds = Math.floor((distance % (1000 * 60)) / 1000);
-
-        timerElement.innerHTML = `${days}d ${hours}h ${minutes}m ${seconds}s`;
-      }
-
-      const countdownInterval = setInterval(updateCountdown, 1000);
-      updateCountdown();
-    })();
-
-    // Popup Functions
-    window.onload = function() {
-      document.getElementById('countdownPopup').style.display = 'block';
-    }
-
-    function closePopup() {
-      document.getElementById('countdownPopup').style.display = 'none';
-    }
   </script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/js-cookie/3.0.1/js.cookie.min.js"></script>
 </body>
