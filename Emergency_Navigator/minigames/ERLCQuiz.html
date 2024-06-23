@@ -1,0 +1,193 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Quiz</title>
+    <link rel="stylesheet" type="text/css" href="./styles/quiz.css">
+      <script async src="https://www.googletagmanager.com/gtag/js?id=G-WD3YV71065"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'G-WD3YV71065');
+  </script>
+</head>
+<body>
+    <header>
+        <nav>
+            <a href="../index.html" class="header_button">Home</a>
+            <a href="./home.html" class="header_button">Minigames</a>
+        </nav>
+    </header>
+
+    <section class="quiz-container">
+        <h2 class="title">Emergency Response: Liberty County Quiz</h2>
+        <form id="quiz-form">
+            <div class="question active">
+                <h3>1. Who is the owner of ER:LC?</h3>
+                <ul class="options">
+                    <li><label><input type="radio" name="q1" value="A">A) crywink</label></li>
+                    <li><label><input type="radio" name="q1" value="B">B) mrfergie</label></li>
+                    <li><label><input type="radio" name="q1" value="C">C) Shawnyg</label></li>
+                    <li><label><input type="radio" name="q1" value="D">D) LostInfinity</label></li>
+                </ul>
+            </div>
+
+            <div class="question">
+                <h3>2. What ER:LC update revamped all buildings?</h3>
+                <ul class="options">
+                    <li><label><input type="radio" name="q2" value="A">A) Summer Update 2020</label></li>
+                    <li><label><input type="radio" name="q2" value="B">B) Summer Update 2021</label></li>
+                    <li><label><input type="radio" name="q2" value="C">C) Summer Update 2022</label></li>
+                    <li><label><input type="radio" name="q2" value="D">D) Summer Update 2023</label></li>
+                </ul>
+            </div>
+
+            <div class="question">
+                <h3>3. What ER:LC update changed ER:LC from paid access to free?</h3>
+                <ul class="options">
+                    <li><label><input type="radio" name="q3" value="A">A) Summer Update 2020</label></li>
+                    <li><label><input type="radio" name="q3" value="B">B) Summer Update 2021</label></li>
+                    <li><label><input type="radio" name="q3" value="C">C) Summer Update 2022</label></li>
+                    <li><label><input type="radio" name="q3" value="D">D) Summer Update 2023</label></li>
+                </ul>
+            </div>
+
+            <div class="question">
+                <h3>4. What year did Springfield get added?</h3>
+                <ul class="options">
+                    <li><label><input type="radio" name="q4" value="A">A) 2020</label></li>
+                    <li><label><input type="radio" name="q4" value="B">B) 2021</label></li>
+                    <li><label><input type="radio" name="q4" value="C">C) 2022</label></li>
+                    <li><label><input type="radio" name="q4" value="D">D) 2023</label></li>
+                </ul>
+            </div>
+            
+            <div class="question">
+                <h3>5. What teams can players choose to play in ER:LC?</h3>
+                <ul class="options">
+                    <li><label><input type="radio" name="q5" value="A">A) Police, Firefighter, DOT, Civilian</label></li>
+                    <li><label><input type="radio" name="q5" value="B">B) Police Firefighter, EMS, Sheriff, Civilian</label></li>
+                    <li><label><input type="radio" name="q5" value="C">C) Police, Sheriff, Firefighter, Civilian</label></li>
+                    <li><label><input type="radio" name="q5" value="D">D) Police, Firefighter, Sheriff, DOT, Civilian</label></li>
+                </ul>
+            </div>
+
+            <div class="question">
+                <h3>6. What was the date that crywink became Technical Lead?</h3>
+                <ul class="options">
+                    <li><label><input type="radio" name="q6" value="A">A) 13th May 2023</label></li>
+                    <li><label><input type="radio" name="q6" value="B">B) 1st June 2024</label></li>
+                    <li><label><input type="radio" name="q6" value="C">C) 13th May 2024</label></li>
+                    <li><label><input type="radio" name="q6" value="D">D) 1st June 2023</label></li>
+                </ul>
+            </div>
+
+            <div class="question">
+                <h3>7. When was ER:LC created?</h3>
+                <ul class="options">
+                    <li><label><input type="radio" name="q7" value="A">A) 11/1/2017</label></li>
+                    <li><label><input type="radio" name="q7" value="B">B) 13/1/2019</label></li>
+                    <li><label><input type="radio" name="q7" value="C">C) 12/1/2018</label></li>
+                    <li><label><input type="radio" name="q7" value="D">D) 11/1/2018</label></li>
+                </ul>
+            </div>
+            <h3>Your Score: <span id="score"></span>/7</h3>
+            <div id="result" style="display: none;">
+                <p>Your score is <span id="score"></span> out of 7.</p>
+                <button type="button" class="button" onclick="retakeQuiz()">Retake Quiz</button>
+            </div>
+            <button type="button" class="button" id="next-button" onclick="showNextQuestion()">Next</button>
+        </form>
+    </section>
+    <footer>
+        <p>&copy; 2024 Emergency Navigator. All rights reserved.</p>
+    </footer>
+    <script>
+        function setCookie(name, value) {
+            const d = new Date();
+            d.setFullYear(d.getFullYear() + 100); // Expires in 100 years
+            const expires = "expires=" + d.toUTCString();
+            document.cookie = name + "=" + value + ";" + expires + ";path=/";
+        }
+    
+        function getCookie(name) {
+            const cname = name + "=";
+            const decodedCookie = decodeURIComponent(document.cookie);
+            const ca = decodedCookie.split(';');
+            for (let i = 0; i < ca.length; i++) {
+                let c = ca[i].trim();
+                if (c.indexOf(cname) === 0) {
+                    return c.substring(cname.length, c.length);
+                }
+            }
+            return "";
+        }
+    
+        function checkerlcScore() {
+            const score = getCookie("erlcScore");
+            if (score !== "") {
+                document.getElementById("score").textContent = score;
+                document.getElementById("result").style.display = 'block';
+            }
+        }
+    
+        function calculateResults() {
+            const quizForm = document.getElementById('quiz-form');
+            const scoreSpan = document.getElementById('score');
+            let score = 0;
+    
+            const answers = {
+                q1: 'B',
+                q2: 'C',
+                q3: 'B',
+                q4: 'C',
+                q5: 'D',
+                q6: 'C',
+                q7: 'D'
+            };
+    
+            for (let [question, correctAnswer] of Object.entries(answers)) {
+                const selectedAnswer = quizForm.querySelector(`input[name="${question}"]:checked`);
+                if (selectedAnswer && selectedAnswer.value === correctAnswer) {
+                    score++;
+                }
+            }
+    
+            scoreSpan.textContent = score; 
+            setCookie("erlcScore", score); 
+            document.getElementById("result").style.display = 'block'; 
+            document.getElementById("next-button").style.display = 'none';
+        }
+    
+        function retakeQuiz() {
+            document.cookie = "erlcScore=; expires=Thu, 01 Jan 1970 00:00:00 UTC; path=/;";
+            document.getElementById('quiz-form').reset();
+            document.getElementById("score").textContent = "";
+            document.getElementById("result").style.display = 'none';
+            document.querySelectorAll('.question').forEach((q, index) => {
+                q.classList.remove('active');
+                if (index === 0) q.classList.add('active');
+            });
+            document.getElementById("next-button").style.display = 'block';
+        }
+    
+        function showNextQuestion() {
+            const currentQuestion = document.querySelector('.question.active');
+            const nextQuestion = currentQuestion.nextElementSibling;
+    
+            if (nextQuestion && nextQuestion.classList.contains('question')) {
+                currentQuestion.classList.remove('active');
+                nextQuestion.classList.add('active');
+            } else {
+                calculateResults();
+            }
+        }
+    
+        window.onload = function() {
+            checkerlcScore();
+        };
+    </script>
+</body>
+</html>

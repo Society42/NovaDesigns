@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Police Navigator - Police Caution</title>
+    <link rel="stylesheet" type="text/css" href="./styles/police-caution.css">
+      <script async src="https://www.googletagmanager.com/gtag/js?id=G-WD3YV71065"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'G-WD3YV71065');
+  </script>
+</head>
+<body>
+    <header>
+        <div class="header-container">
+            <h1 id="title">Police Navigator</h1>
+            <nav>
+                <a href="police-acts.html" class="nav-link">Police Acts</a>
+                <a href="rank-structure.html" class="nav-link">Police Ranks</a>
+                <a href="state-code.html" class="nav-link">State Codes</a>
+                <a href="police-caution.html" class="nav-link">Police Caution</a>
+                <a href="call-grades.html" class="nav-link">Call Grades</a>
+                <a href="../index.html" class="nav-link">Back</a>
+            </nav>
+        </div>
+    </header>
+
+    <div class="container">
+        <div class="sidebar">
+            <h2>Police Caution</h2>
+            <ul id="dictionary-list">
+                <li><a href="#" onclick="showCaution('police-caution-when')">Police Caution</a></li>
+                <li><a href="#" onclick="showCaution('van-caution-notaped')">Van Caution</a></li>
+            </ul>
+        </div>
+        <div class="content">
+            <div id="police-caution-when" class="dictionary-term">
+                <h2>Police Caution | When</h2>
+                <p>You do not have to say anything, but it may harm your defence if you do not mention, when questioned, something which you later rely on in court. Anything you do say may be given in evidence.</p></br></br>
+             
+                <h2>Police Caution | Now</h2>
+                <p>You do not have to say anything, but it may harm your defence if you do not mention now, something which you later rely on in court. Anything you do say may be given in evidence.</p>
+            </div>
+            <div id="police-caution-now" class="dictionary-term">
+                <h2>Police Caution | Now</h2>
+                <p>You do not have to say anything, but it may harm your defence if you do not mention now, something which you later rely on in court. Anything you do say may be given in evidence.</p>
+            </div>
+            <div id="van-caution-notaped" class="dictionary-term">
+                <h2>Not fitted with Audio and Video Taping</h2>
+                <p>This van has been searched prior to your arrest, Anything found in it afterwards will be deemed as yours.</p></br></br>
+             
+                <h2>Fitted with Audio and Video Taping</h2>
+                <p>This van has been searched prior to your arrest, Anything found in it afterwards will be deemed as yours. This van is also fitted with Audio and video recording so anything you do or say may be used against you and will be captured</p>
+            </div>
+            <div id="van-caution-taped" class="dictionary-term">
+                <h2>Van Caution | Fitted with Audio and Video Taping</h2>
+                <p>This van has been searched prior to your arrest, Anything found in it afterwards will be deemed as yours. This van is also fitted with Audio and video recording so anything you do or say may be used against you and will be captured.</p>
+            </div>
+        </div>
+    </div>
+    <footer>
+        <p>&copy; 2024 Police Navigator. All rights reserved.</p>
+    </footer>
+    <script src="./javascript/police-caution.js"></script>
+</body>
+</html>

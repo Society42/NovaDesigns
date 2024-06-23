@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Nova Designs</title>
+    <link rel="stylesheet" href="styles/styles.css">
+</head>
+<body>
+    <nav class="navbar">
+        <div class="logo">Nova Designs</div>
+        <ul class="nav-links">
+            <li><a href="index.html">Home</a></li>
+            <li><a href="forums.html">Forums</a></li>
+            <li><a href="services.html">Services</a></li>
+            <li><a href="credits.html">Credits</a></li>
+            <li><a href="#about">About</a></li>
+        </ul>
+    </nav>
+
+    <section id="home" class="hero">
+        <div class="hero-content">
+            <h1>Welcome to Nova Designs</h1>
+            <p>We design and develop innovative solutions.</p>
+            <a href="#about" class="btn">Learn More</a>
+            <a href="https://www.trustpilot.com" class="btn trustpilot-btn" target="_blank">Leave a Review on Trustpilot</a>
+        </div>
+    </section>
+
+    <section id="reviews" class="reviews">
+        <div class="container">
+            <h2>Customer Reviews</h2>
+            <div class="review">
+                <div class="review-content">
+                    <p>"Best thing ever lad like all you do is serach something and tada its there very good for rp"</p>
+                    <cite>Hogzz, Nova Designs</cite>
+                </div>
+                <div class="review-content">
+                    <p>"Love it for my medical roleplays super efficient and quick defiantly recommend."</p>
+                    <cite>EOEAS - East Of England Ambula, Emergency Navigator</cite>
+                </div>
+            </div>
+            <a href="https://www.trustpilot.com" class="btn trustpilot-btn" target="_blank">Read More Reviews on Trustpilot</a>
+        </div>
+    </section>
+
+    <section id="about" class="about">
+        <div class="container">
+            <h2>About Us</h2>
+            <p>Nova Designs is a premier design and development studio focused on delivering high-quality solutions to our clients. Our team of experts specializes in web design, Discord bots, and graphic designs.</p>
+        </div>
+    </section>
+
+    <div id="popup-overlay" class="popup-overlay">
+        <div id="popup-box" class="popup-box">
+            <h2>Terms of Service and Privacy Policy</h2>
+            <p>Please read our <a href="terms.html" target="_blank">Terms of Service</a> and <a href="privacy.html" target="_blank">Privacy Policy</a>.</p>
+            <p id="warning-msg" style="display: none; color: red; font-size: 14px; margin-top: 10px;">You won't be asked again for 30 days after agreeing.</p>
+            <button id="agree-btn">I Agree</button>
+        </div>
+    </div>
+
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-links">
+                <a href="terms.html" class="footer-link">Terms of Service</a>
+                <a href="privacy.html" class="footer-link">Privacy Policy</a>
+            </div>
+            <p>&copy; 2024 Nova Designs. All Rights Reserved.</p>
+        </div>
+    </footer>
+
+    <script>
+document.addEventListener("DOMContentLoaded", function() {
+    const popupOverlay = document.getElementById("popup-overlay");
+    const agreeBtn = document.getElementById("agree-btn");
+    const warningMsg = document.getElementById("warning-msg");
+
+    const agreedToTermsTimestamp = localStorage.getItem("agreedToTermsTimestamp");
+    const thirtyDaysInMilliseconds = 30 * 24 * 60 * 60 * 1000; 
+
+    warningMsg.style.display = "block";
+
+    if (agreedToTermsTimestamp && (Date.now() - parseInt(agreedToTermsTimestamp) < thirtyDaysInMilliseconds)) {
+        popupOverlay.style.display = "none";
+    } else {
+        setTimeout(function() {
+            popupOverlay.style.display = "flex";
+        }, 2000);
+    }
+
+    agreeBtn.addEventListener("click", function() {
+        localStorage.setItem("agreedToTermsTimestamp", Date.now());
+        popupOverlay.style.display = "none";
+    });
+});
+    </script>
+</body>
+</html>

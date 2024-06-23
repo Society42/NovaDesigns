@@ -1,0 +1,238 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Medical Terms - Health Navigator</title>
+    <link rel="stylesheet" href="styles/medical-terms.css">
+      <script async src="https://www.googletagmanager.com/gtag/js?id=G-WD3YV71065"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'G-WD3YV71065');
+  </script>
+</head>
+<body>
+    <header>
+        <div class="header-container">
+            <h1 id="title">Medical Navigator</h1>
+            <nav>
+                <a href="./medical-help.html" class="nav-link">Medical Help</a>
+                <a href="./medical-terms.html" class="nav-link">Medical Terms</a>
+                <a href="../index.html" class="nav-link">Back</a>
+            </nav>
+        </div>
+    </header>
+
+    <div class="container">
+        <div class="sidebar">
+            <h2>Medical Dictionary</h2>
+            <ul id="dictionary-list">
+                <li><button onclick="toggleDefinition('diagnosis')" class="button">Diagnosis</button></li>
+                <li><button onclick="toggleDefinition('treatment')" class="button">Treatment</button></li>
+                <li><button onclick="toggleDefinition('symptom')" class="button">Symptom</button></li>
+                <li><button onclick="toggleDefinition('sign')" class="button">Sign</button></li>
+                <li><button onclick="toggleDefinition('prognosis')" class="button">Prognosis</button></li>
+                <li><button onclick="toggleDefinition('prevention')" class="button">Prevention</button></li>
+                <li><button onclick="toggleDefinition('diagnosis_code')" class="button">Diagnosis Code</button></li>
+                <li><button onclick="toggleDefinition('therapy')" class="button">Therapy</button></li>
+                <li><button onclick="toggleDefinition('medication')" class="button">Medication</button></li>
+                <li><button onclick="toggleDefinition('prophylaxis')" class="button">Prophylaxis</button></li>
+                <li><button onclick="toggleDefinition('etiology')" class="button">Etiology</button></li>
+                <li><button onclick="toggleDefinition('pathophysiology')" class="button">Pathophysiology</button></li>
+                <li><button onclick="toggleDefinition('pharmacokinetics')" class="button">Pharmacokinetics</button></li>
+                <li><button onclick="toggleDefinition('pharmacodynamics')" class="button">Pharmacodynamics</button></li>
+                <li><button onclick="toggleDefinition('genomics')" class="button">Genomics</button></li>
+                <li><button onclick="toggleDefinition('precision_medicine')" class="button">Precision Medicine</button></li>
+                <li><button onclick="toggleDefinition('telemedicine')" class="button">Telemedicine</button></li>
+                <li><button onclick="toggleDefinition('bioinformatics')" class="button">Bioinformatics</button></li>
+                <li><button onclick="toggleDefinition('pharmacogenomics')" class="button">Pharmacogenomics</button></li>
+                <li><button onclick="toggleDefinition('immunotherapy')" class="button">Immunotherapy</button></li>
+                <li><button onclick="toggleDefinition('nosocomial_infection')" class="button">Nosocomial Infection</button></li>
+                <li><button onclick="toggleDefinition('palliative_care')" class="button">Palliative Care</button></li>
+                <li><button onclick="toggleDefinition('polypharmacy')" class="button">Polypharmacy</button></li>
+                <li><button onclick="toggleDefinition('thrombolytic_therapy')" class="button">Thrombolytic Therapy</button></li>
+                <li><button onclick="toggleDefinition('electroencephalogram')" class="button">Electroencephalogram (EEG)</button></li>
+                <li><button onclick="toggleDefinition('hemodynamic_monitoring')" class="button">Hemodynamic Monitoring</button></li>
+                <li><button onclick="toggleDefinition('immunodeficiency')" class="button">Immunodeficiency</button></li>
+                <li><button onclick="toggleDefinition('metabolic_syndrome')" class="button">Metabolic Syndrome</button></li>
+            </ul>
+        </div>
+        <div class="content">
+            <div id="diagnosis" class="dictionary-term">
+                <h2>Diagnosis</h2>
+                <p><strong>Definition:</strong> The identification of a disease or condition based on signs, symptoms, and diagnostic tests.</p>
+                <p><strong>Usage:</strong> Diagnosis is made during the assessment of a patient's medical history, physical examination, and laboratory or imaging studies.</p>
+            </div>
+
+            <div id="treatment" class="dictionary-term">
+                <h2>Treatment</h2>
+                <p><strong>Definition:</strong> Medical care provided to manage or cure a disease or alleviate symptoms.</p>
+                <p><strong>Usage:</strong> Treatment plans are developed based on the diagnosis and may include medications, procedures, surgery, therapy, or lifestyle modifications.</p>
+            </div>
+
+            <div id="symptom" class="dictionary-term">
+                <h2>Symptom</h2>
+                <p><strong>Definition:</strong> A subjective indication of a disease or abnormality experienced by the patient, such as pain, fatigue, or nausea.</p>
+                <p><strong>Usage:</strong> Symptoms are reported by patients during medical history taking and help healthcare providers assess the patient's condition.</p>
+            </div>
+
+            <div id="sign" class="dictionary-term">
+                <h2>Sign</h2>
+                <p><strong>Definition:</strong> An objective indication of a disease or abnormality that can be observed or measured by a healthcare provider, such as fever, rash, or elevated blood pressure.</p>
+                <p><strong>Usage:</strong> Signs are identified during physical examination or diagnostic testing and aid in the diagnosis and monitoring of conditions.</p>
+            </div>
+
+            <div id="prognosis" class="dictionary-term">
+                <h2>Prognosis</h2>
+                <p><strong>Definition:</strong> The likely course and outcome of a disease or condition, including the likelihood of recovery or progression.</p>
+                <p><strong>Usage:</strong> Prognosis is discussed with patients to provide information about their condition's expected trajectory and guide treatment decisions.</p>
+            </div>
+
+            <div id="prevention" class="dictionary-term">
+                <h2>Prevention</h2>
+                <p><strong>Definition:</strong> Measures taken to avoid the occurrence or progression of disease, injury, or disability.</p>
+                <p><strong>Usage:</strong> Prevention strategies include immunizations, screenings, lifestyle modifications, and public health initiatives aimed at reducing risk factors.</p>
+            </div>
+
+            <div id="diagnosis_code" class="dictionary-term">
+                <h2>Diagnosis Code</h2>
+                <p><strong>Definition:</strong>  A code used to classify diseases, injuries, and medical conditions for billing, statistical analysis, and medical recordkeeping purposes.</p>
+                <p><strong>Usage:</strong> Diagnosis codes are assigned based on the patient's condition and are used in medical claims, electronic health records, and healthcare databases.</p>
+            </div>
+
+            <div id="therapy" class="dictionary-term">
+                <h2>Therapy</h2>
+                <p><strong>Definition:</strong>  Medical treatment aimed at improving a patient's health or managing symptoms, often involving medications, physical interventions, or counseling.</p>
+                <p><strong>Usage:</strong> Therapy may be prescribed as part of a comprehensive treatment plan for various conditions, including chronic diseases, mental health disorders, and rehabilitation.</p>
+            </div>
+
+            <div id="medication" class="dictionary-term">
+                <h2>Medication</h2>
+                <p><strong>Definition:</strong>  Drugs or substances used to prevent, diagnose, treat, or manage medical conditions.</p>
+                <p><strong>Usage:</strong> Medications are prescribed by healthcare providers and may be taken orally, applied topically, injected, or administered intravenously, depending on the condition and treatment goals.</p>
+            </div>
+
+            <div id="prophylaxis" class="dictionary-term">
+                <h2>Prophylaxis</h2>
+                <p><strong>Definition:</strong>  Preventive measures taken to avoid the development or spread of disease or infection.</p>
+                <p><strong>Usage:</strong> Prophylaxis may involve vaccination, antibiotics, antiviral drugs, or other interventions to reduce the risk of illness or complications.</p>
+            </div>
+
+            <div id="etiology" class="dictionary-term">
+                <h2>Etiology</h2>
+                <p><strong>Definition:</strong>  The study of the causes or origins of diseases or medical conditions.</p>
+                <p><strong>Usage:</strong> Etiology examines factors such as genetic predisposition, environmental exposures, and infectious agents contributing to disease development.</p>
+            </div>
+
+            <div id="pathophysiology" class="dictionary-term">
+                <h2>Pathophysiology</h2>
+                <p><strong>Definition:</strong>  The study of the physiological processes underlying diseases or abnormal conditions within the body.</p>
+                <p><strong>Usage:</strong> Pathophysiology explores how alterations in normal bodily functions lead to the development of specific diseases or disorders.</p>
+            </div>
+
+            <div id="pharmacokinetics" class="dictionary-term">
+                <h2>Pharmacokinetics</h2>
+                <p><strong>Definition:</strong>  The study of how drugs are absorbed, distributed, metabolized, and excreted within the body.</p>
+                <p><strong>Usage:</strong> Pharmacokinetics informs dosing regimens and drug administration routes based on factors such as bioavailability, half-life, and drug interactions.</p>
+            </div>
+
+            <div id="pharmacodynamics" class="dictionary-term">
+                <h2>Pharmacodynamics</h2>
+                <p><strong>Definition:</strong>  The study of how drugs exert their effects on the body at the molecular, cellular, and systemic levels.</p>
+                <p><strong>Usage:</strong> Pharmacodynamics elucidates drug-receptor interactions, mechanisms of action, and therapeutic or adverse effects.</p>
+            </div>
+
+            <div id="genomics" class="dictionary-term">
+                <h2>Genomics</h2>
+                <p><strong>Definition:</strong> The study of an organism's complete set of DNA, including genes and their functions.</p>
+                <p><strong>Usage:</strong> Genomics investigates how variations in genetic sequences influence health, disease susceptibility, and responses to medications.</p>
+            </div>
+
+            <div id="precision_medicine" class="dictionary-term">
+                <h2>Precision Medicine</h2>
+                <p><strong>Definition:</strong> An approach to healthcare that tailors medical treatments and interventions to individual patients based on their genetic makeup, environmental factors, and lifestyle.</p>
+                <p><strong>Usage:</strong> Precision medicine aims to optimize treatment efficacy, minimize adverse effects, and improve patient outcomes through personalized healthcare strategies.</p>
+            </div>
+
+            <div id="telemedicine" class="dictionary-term">
+                <h2>Telemedicine</h2>
+                <p><strong>Definition:</strong> The remote delivery of healthcare services using telecommunications technology, such as video conferencing, remote monitoring, and digital communication tools.</p>
+                <p><strong>Usage:</strong> Telemedicine enables healthcare providers to deliver medical consultations, diagnoses, and treatments to patients located at a distance, improving access to care and patient convenience.</p>
+            </div>
+
+            <div id="bioinformatics" class="dictionary-term">
+                <h2>Bioinformatics</h2>
+                <p><strong>Definition:</strong> The interdisciplinary field that combines biology, computer science, and information technology to analyze and interpret biological data, particularly genomic and molecular data</p>
+                <p><strong>Usage:</strong> Bioinformatics tools and techniques are used to analyze DNA sequences, predict protein structures, and identify biomarkers associated with diseases.</p>
+            </div>
+
+            <div id="pharmacogenomics" class="dictionary-term">
+                <h2>Pharmacogenomics</h2>
+                <p><strong>Definition:</strong> The study of how genetic variations influence individual responses to medications, including drug metabolism, efficacy, and toxicity.</p>
+                <p><strong>Usage:</strong> Pharmacogenomics guides personalized medication selection and dosing based on an individual's genetic profile, optimizing therapeutic outcomes and minimizing adverse drug reactions.</p>
+            </div>
+
+            <div id="immunotherapy" class="dictionary-term">
+                <h2>Immunotherapy</h2>
+                <p><strong>Definition:</strong> A type of medical treatment that harnesses the body's immune system to fight diseases, particularly cancer and autoimmune disorders</p>
+                <p><strong>Usage:</strong> Immunotherapy includes various approaches, such as immune checkpoint inhibitors, monoclonal antibodies, and adoptive cell therapies, aimed at enhancing immune responses against specific targets or antigens.</p>
+            </div>
+
+            <div id="nosocomial_infection" class="dictionary-term">
+                <h2>Nosocomial Infection</h2>
+                <p><strong>Definition:</strong> An infection acquired in a healthcare setting, such as a hospital or clinic, typically caused by bacteria, viruses, or fungi.</p>
+                <p><strong>Usage:</strong> Nosocomial infections are a significant concern for patient safety and may result from inadequate infection control practices or compromised immune systems.</p>
+            </div>
+
+            <div id="palliative_care" class="dictionary-term">
+                <h2>Palliative Care</h2>
+                <p><strong>Definition:</strong> Specialized medical care focused on relieving pain, managing symptoms, and improving the quality of life for patients with serious illnesses or life-limiting conditions.</p>
+                <p><strong>Usage:</strong> Palliative care aims to address physical, emotional, and spiritual needs, providing support to patients and their families throughout the illness trajectory.</p>
+            </div>
+
+            <div id="polypharmacy" class="dictionary-term">
+                <h2>Polypharmacy</h2>
+                <p><strong>Definition:</strong> The concurrent use of multiple medications by a patient, often involving the prescription of numerous drugs for various medical conditions.</p>
+                <p><strong>Usage:</strong> Polypharmacy increases the risk of adverse drug reactions, drug interactions, and medication errors, requiring careful monitoring and medication management.</p>
+            </div>
+
+            <div id="thrombolytic_therapy" class="dictionary-term">
+                <h2>Thrombolytic Therapy</h2>
+                <p><strong>Definition:</strong> Medical treatment aimed at dissolving blood clots within blood vessels, often used to treat conditions such as acute myocardial infarction (heart attack) or ischemic stroke.</p>
+                <p><strong>Usage:</strong> Thrombolytic therapy involves administering drugs known as thrombolytics or clot-busting agents to restore blood flow and prevent tissue damage associated with clot formation.</p>
+            </div>
+
+            <div id="electroencephalogram" class="dictionary-term">
+                <h2>Electroencephalogram (EEG)</h2>
+                <p><strong>Definition:</strong> A diagnostic test that records electrical activity in the brain using electrodes placed on the scalp, typically used to evaluate seizure disorders, sleep disorders, and brain function.</p>
+                <p><strong>Usage:</strong> EEG findings help diagnose and monitor conditions such as epilepsy, brain tumors, and encephalopathy, providing valuable information for treatment planning and management.</p>
+            </div>
+
+            <div id="hemodynamic_monitoring" class="dictionary-term">
+                <h2>Hemodynamic Monitoring</h2>
+                <p><strong>Definition:</strong> The measurement and assessment of blood flow, pressure, and volume within the cardiovascular system, often performed in critical care settings to guide treatment decisions.</p>
+                <p><strong>Usage:</strong> Hemodynamic monitoring helps evaluate cardiac function, fluid status, and tissue perfusion, optimizing hemodynamic stability and organ function in critically ill patients.</p>
+            </div>
+
+            <div id="immunodeficiency" class="dictionary-term">
+                <h2>Immunodeficiency</h2>
+                <p><strong>Definition:</strong> A condition characterized by impaired or deficient immune function, predisposing individuals to recurrent infections, autoimmune disorders, and malignancies.</p>
+                <p><strong>Usage:</strong> Immunodeficiency may be congenital (primary) or acquired (secondary) and requires specialized medical management, including immunoglobulin replacement therapy, prophylactic antibiotics, and immunosuppressive agents.</p>
+            </div>
+
+            <div id="metabolic_syndrome" class="dictionary-term">
+                <h2>Metabolic Syndrome</h2>
+                <p><strong>Definition:</strong> A cluster of metabolic abnormalities, including central obesity, insulin resistance, dyslipidemia, and hypertension, associated with an increased risk of cardiovascular disease and type 2 diabetes.</p>
+                <p><strong>Usage:</strong> Metabolic syndrome management focuses on lifestyle modifications, such as diet and exercise, along with pharmacological interventions to address individual risk factors and prevent complications.</p>
+            </div>
+        </div>
+        </div>
+        <footer>
+            <p>&copy; 2024 Medical Navigator. All rights reserved.</p>
+        </footer>
+        <script src="./javascript/medical-terms.js"></script>
+    </body>
+    </html>
+    

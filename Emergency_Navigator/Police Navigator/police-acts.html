@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Police Navigator</title>
+    <link rel="stylesheet" href="./styles/police-acts.css">
+      <script async src="https://www.googletagmanager.com/gtag/js?id=G-WD3YV71065"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'G-WD3YV71065');
+  </script>
+</head>
+<body>
+  <header>
+    <div class="header-container">
+        <h1 id="title">Police Navigator</h1>
+        <nav>
+            <a href="police-acts.html" class="nav-link">Police Acts</a>
+            <a href="rank-structure.html" class="nav-link">Police Ranks</a>
+            <a href="state-code.html" class="nav-link">State Codes</a>
+            <a href="police-caution.html" class="nav-link">Police Caution</a>
+            <a href="call-grades.html" class="nav-link">Call Grades</a>
+                <a href="../index.html" class="nav-link">Back</a>
+        </nav>
+    </div>
+</header>
+
+    <div class="container">
+        <div class="sidebar">
+            <h2>Search</h2>
+            <input type="text" id="search-input" placeholder="Search...">
+            <ul id="article-list"></ul>
+            <p class="no-results" style="display: none">No results found.</p>
+        </div>
+        <div class="content">
+            <div id="article-container"></div>
+            <div id="article-details"></div>
+        </div>
+    </div>
+    <footer>
+        <p>&copy; 2024 Police Navigator. All rights reserved.</p>
+    </footer>
+    <script src="./javascript/police-acts.js"></script>
+</body>
+</html>
