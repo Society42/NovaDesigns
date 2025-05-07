@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Officer Database</title>
+  <link rel="stylesheet" href="/officers.css">
+</head>
+<body>
+  <nav class="navbar">
+    <div class="nav-logo">RST Police Database</div>
+    <div class="nav-links">
+      <a href="/home">Home</a>
+      <a href="/officers">Officers</a>
+      <a href="/admin">Admin</a>
+      <% if (user) { %>
+        <div class="user-dropdown">
+          <img src="<%= user.avatarURL || '/images/default-avatar.png' %>" alt="User Avatar" class="user-avatar">
+          <span class="username"><%= user.Username %></span>
+          <div class="dropdown-content">
+            <a href="/profile">View Profile</a>
+            <a href="/logout" class="logout-btn">Logout</a>
+          </div>
+        </div>
+      <% } else { %>
+        <a href="/auth/discord" class="discord-button">Login with Discord</a>
+      <% } %>
+    </div>
+  </nav>
+      
+
+  <section class="officer-list">
+    <h2>All Officers</h2>
+    <table class="officer-table">
+      <thead>
+        <tr>
+          <th>Username</th>
+          <th>Discord ID</th>
+          <th>Rank</th>
+          <th>Status</th>
+          <th>Steam ID</th>
+          <th>Strikes</th>
+          <th>Division</th>
+          <th>Tier</th>
+        </tr>
+      </thead>
+      <tbody>
+        <% officers.forEach(officer => { %>
+          <tr>
+            <td><%= officer.Username %></td>
+            <td><%= officer.discordId %></td>
+            <td><%= officer.rank %></td>
+            <td><%= officer.status %></td>
+            <td><%= officer.steamId || 'Not Linked' %></td>
+            <td><%= officer.strikes %></td>
+            <td><%= officer.division %></td>
+            <td><%= officer.tier %></td>
+          </tr>
+        <% }); %>
+      </tbody>
+    </table>
+  </section>
+</body>
+</html>

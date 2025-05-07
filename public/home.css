@@ -1,0 +1,212 @@
+body {
+    margin: 0;
+    font-family: 'Segoe UI', sans-serif;
+    background: #f4f7fa;
+    color: #333;
+  }
+  
+  .navbar {
+    background-color: #1f2b3a;
+    color: white;
+    padding: 15px 30px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+  
+  .nav-right {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+  }
+
+  .nav-logo {
+    font-weight: bolder;
+  }
+  
+  .nav-links {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+  }
+  
+  .nav-links a {
+    color: white;
+    text-decoration: none;
+    font-weight: 500;
+  }
+  
+  .user-avatar {
+    width: 24px;
+    height: 24px;
+    border-radius: 50%;
+    object-fit: cover;
+    display: inline-block;
+    margin-right: 6px;
+    padding: 0;
+    border: none;
+  }
+  
+  .user-dropdown {
+    display: flex;
+    align-items: center;
+    position: relative;
+    gap: 6px;
+    cursor: pointer;
+    padding: 6px 10px;
+    border-radius: 6px;
+    background-color: rgba(255, 255, 255, 0.05); 
+    transition: background-color 0.2s ease;
+  }
+  
+  .user-dropdown:hover {
+    background-color: rgba(255, 255, 255, 0.1); 
+  }  
+  
+  .username {
+    font-weight: 500;
+    color: white;
+    white-space: nowrap;
+  }  
+
+  .dropdown-content {
+    display: none;
+    position: absolute;
+    right: 0; 
+    top: 100%;
+    background-color: #333;
+    min-width: 160px;
+    z-index: 1;
+    border-radius: 4px;
+    box-shadow: 0px 8px 16px rgba(0, 0, 0, 0.2);
+  }  
+
+  .dropdown-content a {
+    color: white;
+    padding: 12px 16px;
+    text-decoration: none;
+    display: block;
+  }
+
+  .dropdown-content a:hover {
+    background-color: #575757;
+  }
+
+  .user-dropdown:hover .dropdown-content {
+    display: block;
+  }
+  
+  .logout-btn {
+    color: #ff4d4d;
+    font-weight: bold;
+  }
+  
+  .discord-button {
+    background: #5865F2;
+    padding: 10px 18px;
+    border-radius: 6px;
+    color: white;
+    text-decoration: none;
+    font-weight: 600;
+  }
+  
+  .container {
+    max-width: 1000px;
+    margin: 40px auto;
+    padding: 20px;
+  }
+  
+  .hero {
+    text-align: center;
+    margin-bottom: 50px;
+  }
+  
+  .hero h1 {
+    font-size: 32px;
+    color: #1f2b3a;
+  }
+  
+  .stats h2 {
+    margin-bottom: 20px;
+  }
+  
+  .stat-grid {
+    display: flex;
+    gap: 20px;
+    flex-wrap: wrap;
+    justify-content: space-around;
+  }
+  
+  .stat-card {
+    background: white;
+    padding: 30px;
+    border-radius: 12px;
+    box-shadow: 0 5px 20px rgba(0,0,0,0.07);
+    width: 220px;
+    text-align: center;
+  }
+  
+  .stat-card h3 {
+    font-size: 18px;
+    color: #777;
+    margin-bottom: 10px;
+  }
+  
+  .stat-card p {
+    font-size: 26px;
+    font-weight: bold;
+    color: #2d6cdf;
+  }
+  
+  .about, .credits {
+    margin-top: 40px;
+  }
+  
+  .about h2, .credits h2 {
+    font-size: 22px;
+    margin-bottom: 10px;
+  }
+  
+  .credits ul {
+    list-style: square inside;
+    padding-left: 0;
+  }
+  
+  .section-title {
+    text-align: center;
+    font-size: 24px;
+    margin-bottom: 20px;
+    color: #1f2b3a;
+    border-bottom: 2px solid #e1e1e1;
+    padding-bottom: 10px;
+    width: fit-content;
+    margin-left: auto;
+    margin-right: auto;
+  }
+  
+  .about, .credits {
+    background: #ffffff;
+    border-radius: 12px;
+    padding: 30px;
+    margin-top: 40px;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+  }
+  
+  .about p {
+    font-size: 16px;
+    line-height: 1.6;
+    text-align: center;
+    color: #444;
+  }
+  
+  .credits ul {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding-left: 0;
+    list-style: none;
+    font-size: 16px;
+    gap: 6px;
+    color: #555;
+  }
+  
