@@ -1,0 +1,218 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Manage Users</title>
+  <link rel="stylesheet" href="/admin_users.css">
+</head>
+<body>
+    <nav class="navbar">
+        <div class="nav-logo">RST Police Database</div>
+        <div class="nav-links">
+          <a href="/home">Home</a>
+          <div class="roster-dropdown">
+            <a class="username">Roster</a>
+            <div class="dropdown-content">
+              <a href="/officers">Officers</a>
+              <a href="/swat" class="logout-btn">Swat</a>
+              <a href="/internal-affairs" class="logout-btn">Internal Affairs</a>
+            </div>
+          </div>      
+            <a href="/admin">Admin</a>
+    
+          <% if (user) { %>
+            <div class="user-dropdown">
+              <img src="<%= user.avatarURL || '/images/default-avatar.png' %>" alt="User Avatar" class="user-avatar">
+              <span class="username"><%= user.Username %></span>
+              <div class="dropdown-content">
+                <a href="/profile">View Profile</a>
+                <a href="/logout" class="logout-btn">Logout</a>
+              </div>
+            </div>
+          <% } else { %>
+            <a href="/auth/discord" class="discord-button">Login with Discord</a>
+          <% } %>
+        </div>
+      </nav>
+
+  <section class="user-list">
+    <h2>Manage Swat</h2>
+    <button class="btn btn-create" onclick="openCreateModal()">Create New User</button>
+    <table class="user-table">
+      <thead>
+        <tr>
+          <th>Username</th>
+          <th>Discord ID</th>
+          <th>Rank</th>
+          <th>Status</th>
+          <th>Steam ID</th>
+          <th>Strikes</th>
+          <th>Division</th>
+          <th>Actions</th>
+        </tr>
+      </thead>
+      <tbody>
+        <% swatMembers.forEach(swatMembers => { %>
+          <tr>
+            <td><%= swatMembers.Username %></td>
+            <td><%= swatMembers.discordId %></td>
+            <td><%= swatMembers.rank %></td>
+            <td><%= swatMembers.status %></td>
+            <td><%= swatMembers.steamId %></td>
+            <td><%= swatMembers.strikes %></td>
+            <td><%= swatMembers.division %></td>
+            <td>
+                <button class="btn btn-manage" onclick='openEditModal(<%- JSON.stringify(swatMembers) %>)'>Manage</button>
+                <button class="btn btn-delete" onclick='openDeleteModal("<%= swatMembers._id %>")'>Delete</button>                
+            </td>
+          </tr>
+        <% }) %>
+      </tbody>
+    </table>
+  </section>
+  <div class="modal" id="editModal">
+    <div class="modal-content">
+      <div class="modal-header">Edit User</div>
+      <form id="editForm" method="POST">
+        <input type="hidden" name="id" id="editId">
+        <label>Username:</label>
+        <input type="text" name="Username" id="editUsername" required><br><br>
+        <label>Discord ID:</label>
+        <input type="text" name="discordId" id="editDiscordId" required><br><br>
+        <label>Rank:</label>
+        <input type="text" name="rank" id="editRank" required><br><br>
+        <label>Status:</label>
+        <select name="status" id="editStatus" required>
+          <option value="Active">Active</option>
+          <option value="LOA">LOA</option>
+          <option value="Suspended">Suspended</option>
+        </select><br><br>
+        <label>Steam ID:</label>
+        <input type="text" name="steamId" id="editSteamId" required><br><br>
+        <label>Strikes:</label>
+        <input type="number" name="strikes" id="editStrikes" required><br><br>
+        <label>Division:</label>
+        <input type="text" name="division" id="editDivision" required><br><br>
+
+        <div class="modal-actions">
+          <button type="button" onclick="closeModals()">Cancel</button>
+          <button type="submit" class="btn btn-manage">Save</button>
+        </div>
+      </form>
+    </div>
+      </div>
+
+  <div class="modal" id="deleteModal">
+    <div class="modal-content">
+      <div class="modal-header">Confirm Delete</div>
+      <p>Are you sure you want to delete this user?</p>
+      <form id="deleteForm" method="POST">
+        <input type="hidden" name="id" id="deleteId">
+        <div class="modal-actions">
+          <button type="button" onclick="closeModals()">Cancel</button>
+          <button type="submit" class="btn btn-delete">Delete</button>
+        </div>
+      </form>
+    </div>
+  </div>
+
+  <div class="modal" id="createModal">
+    <div class="modal-content">
+      <div class="modal-header">Create New User</div>
+      <form id="createForm" method="POST">
+        <label>Username:</label>
+        <input type="text" name="Username" required><br><br>
+        
+        <label>Discord ID:</label>
+        <input type="text" name="discordId" required><br><br>
+        
+        <label>Rank:</label>
+        <input type="text" name="rank" required><br><br>
+        
+        <label>Status:</label>
+        <select name="status" required>
+          <option value="Active">Active</option>
+          <option value="LOA">LOA</option>
+          <option value="Suspended">Suspended</option>
+        </select><br><br>
+        
+        <label>Steam ID:</label>
+        <input type="text" name="steamId" required><br><br>
+        
+        <label>Strikes:</label>
+        <input type="number" name="strikes" required><br><br>
+        
+        <label>Division:</label>
+        <input type="text" name="division" required><br><br>
+        
+        <div class="modal-actions">
+          <button type="button" onclick="closeModals()">Cancel</button>
+          <button type="submit" class="btn btn-create">Create</button>
+        </div>
+      </form>
+    </div>
+  </div>  
+
+  <script>
+    window.onclick = function(event) {
+  const modals = ['editModal', 'deleteModal', 'createModal'];
+  modals.forEach(id => {
+    if (event.target == document.getElementById(id)) {
+      document.getElementById(id).style.display = "none";
+    }
+  });
+}
+
+function openEditModal(swatMembers) {
+  document.getElementById('editId').value = swatMembers._id;
+  document.getElementById('editUsername').value = swatMembers.Username;
+  document.getElementById('editDiscordId').value = swatMembers.discordId;
+  document.getElementById('editRank').value = swatMembers.rank;
+  document.getElementById('editStatus').value = swatMembers.status; 
+  document.getElementById('editSteamId').value = swatMembers.steamId;
+  document.getElementById('editStrikes').value = swatMembers.strikes;
+  document.getElementById('editDivision').value = swatMembers.division;
+
+  document.getElementById('editForm').action = '/admin/swat/edit/' + swatMembers._id;
+
+  document.getElementById('editModal').style.display = 'block';
+}
+
+    function openDeleteModal(id) {
+      document.getElementById('deleteId').value = id;
+      document.getElementById('deleteForm').action = '/admin/swat/delete/' + id;
+      document.getElementById('deleteModal').style.display = 'block';
+    }
+
+    function openCreateModal() {
+  document.getElementById('createForm').action = '/admin/swat/create'; 
+  document.getElementById('createModal').style.display = 'block';
+}
+
+    document.getElementById('createForm').onsubmit = function(event) {
+  let formValid = true;
+  const formElements = event.target.elements;
+  
+  for (let element of formElements) {
+    if (element.hasAttribute('required') && !element.value.trim()) {
+      formValid = false;
+      element.style.borderColor = 'red'; 
+    } else {
+      element.style.borderColor = ''; 
+    }
+  }
+
+  if (!formValid) {
+    event.preventDefault(); 
+    alert("Please fill in all required fields.");
+  }
+};
+
+    function closeModals() {
+      document.getElementById('editModal').style.display = 'none';
+      document.getElementById('deleteModal').style.display = 'none';
+      document.getElementById('createModal').style.display = 'none';
+    }
+  </script>
+</body>
+</html>

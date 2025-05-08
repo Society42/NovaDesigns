@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Admin - Manage Guides</title>
+</head>
+<body>
+  <header>
+    <h1>Manage Guides</h1>
+    <a href="/admin/guides/create">Create New Guide</a>
+  </header>
+  
+  <table>
+    <thead>
+      <tr>
+        <th>Title</th>
+        <th>Public</th>
+        <th>Actions</th>
+      </tr>
+    </thead>
+    <tbody>
+      <% guides.forEach((guide) => { %>
+        <tr>
+          <td><%= guide.title %></td>
+          <td><%= guide.isPublic ? 'Yes' : 'No' %></td>
+          <td>
+            <a href="/guides/<%= guide._id %>">View</a> |
+            <a href="/admin/guides/edit/<%= guide._id %>">Edit</a> |
+            <a href="/admin/guides/delete/<%= guide._id %>">Delete</a>
+          </td>
+        </tr>
+      <% }) %>
+    </tbody>
+  </table>
+</body>
+</html>

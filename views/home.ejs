@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>RST Police Database</title>
+  <link rel="stylesheet" href="/home.css">
+</head>
+<body>
+  <nav class="navbar">
+    <div class="nav-logo">RST Police Database</div>
+    <div class="nav-links">
+      <a href="/home">Home</a>
+      <div class="roster-dropdown">
+        <a class="username">Roster</a>
+        <div class="dropdown-content">
+          <a href="/officers">Officers</a>
+          <a href="/swat" class="logout-btn">Swat</a>
+          <a href="/internal-affairs" class="logout-btn">Internal Affairs</a>
+        </div>
+      </div>      
+        <a href="/admin">Admin</a>
+
+      <% if (user) { %>
+        <div class="user-dropdown">
+          <img src="<%= user.avatarURL || '/images/default-avatar.png' %>" alt="User Avatar" class="user-avatar">
+          <span class="username"><%= user.Username %></span>
+          <div class="dropdown-content">
+            <a href="/profile">View Profile</a>
+            <a href="/logout" class="logout-btn">Logout</a>
+          </div>
+        </div>
+      <% } else { %>
+        <a href="/auth/discord" class="discord-button">Login with Discord</a>
+      <% } %>
+    </div>
+  </nav>
+
+  <div class="container">
+    <section class="hero">
+      <h1>Welcome to the RST Police Database</h1>
+      <p>A secure database for RST Police Department.</p>
+    </section>
+
+    <section class="stats">
+      <h2 class="section-title">Live Statistics</h2>
+      <div class="stat-grid">
+        <div class="stat-card">
+          <h3>Total Officers</h3>
+          <p><%= stats.totalUsers %></p>
+        </div>
+        <div class="stat-card">
+          <h3>Total Swat</h3>
+          <p><%= stats.totalSwat %></p>
+        </div>
+        <div class="stat-card">
+          <h3>Total IA</h3>
+          <p><%= stats.totalIA %></p>
+        </div>
+      </div>
+    </section>
+
+    <section class="about">
+      <h2 class="section-title">About This Database</h2>
+      RST Database is an innovative platform built specifically for the RST Police Department, designed to streamline operations and enhance efficiency. Packed with a variety of powerful features, including a comprehensive Cadet List and more, the site provides essential tools for managing and organizing department tasks. With many exciting updates and new functionalities in the pipeline, the future of RST Database looks bright, promising even more ways to support and empower the RST Police team.
+    </section>    
+
+    <section class="credits">
+      <h2 class="section-title">Credits</h2>
+      <ul>
+        <li>Website Developer: Society</li>
+        <li>Discord Bot Developer: Society</li>
+      </ul>
+    </section>
+  </div>
+</body>
+</html>

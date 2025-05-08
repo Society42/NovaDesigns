@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Admin Dashboard</title>
+  <link rel="stylesheet" href="/admin.css">
+</head>
+<body>
+  <nav class="navbar">
+    <div class="nav-logo">RST Police Database</div>
+    <div class="nav-links">
+      <a href="/home">Home</a>
+      <div class="roster-dropdown">
+        <a class="username">Roster</a>
+        <div class="dropdown-content">
+          <a href="/officers">Officers</a>
+          <a href="/swat" class="logout-btn">Swat</a>
+          <a href="/internal-affairs" class="logout-btn">Internal Affairs</a>
+        </div>
+      </div>      
+        <a href="/admin">Admin</a>
+
+      <% if (user) { %>
+        <div class="user-dropdown">
+          <img src="<%= user.avatarURL || '/images/default-avatar.png' %>" alt="User Avatar" class="user-avatar">
+          <span class="username"><%= user.Username %></span>
+          <div class="dropdown-content">
+            <a href="/profile">View Profile</a>
+            <a href="/logout" class="logout-btn">Logout</a>
+          </div>
+        </div>
+      <% } else { %>
+        <a href="/auth/discord" class="discord-button">Login with Discord</a>
+      <% } %>
+    </div>
+  </nav>
+  
+  <main>
+    <section class="dashboard-header">
+      <h1>Admin Dashboard</h1>
+      <p class="welcome-text">Welcome, <%= user?.Username || "Guest" %> — manage based on your access level.</p>
+    </section>
+
+    <div class="admin-sections">
+      <% if (user && (user.tier === 'Silver Command' || user.tier === 'Gold Command' || user.tier === 'Chief Officer Team')) { %>
+        <div class="admin-card">
+          <h2>Silver Command + Options</h2>
+          <ul>
+            <li><a href="/admin/users">Manage Users</a></li>
+            <li><a href="/admin/cadets">Manage Cadet List</a></li>
+            <li><button class="disabled" disabled>Manage Applications (Coming Soon)</button></li>
+          </ul>
+        </div>
+      <% } %>
+
+      <% if (user && user.tier === 'Developer') { %>
+        <div class="admin-card">
+          <h2>Developer Tools</h2>
+          <ul>
+            <li><a href="/admin/devpanel">Developer Panel</a></li>
+            <li><a href="/admin/db">Database Viewer</a></li>
+          </ul>
+        </div>
+      <% } %>
+    </div>
+  </main>
+
+  <footer>
+    <p>&copy; 2025 RST Police Database. All Rights Reserved.</p>
+  </footer>
+</body>
+</html>
