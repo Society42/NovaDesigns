@@ -15,4 +15,19 @@ const userSchema = new mongoose.Schema({
   }
 });
 
+userSchema.post('save', async function (doc, next) {
+  if (doc.isNew) {
+    try {
+      const exists = await CadetList.findOne({ discordId: doc.discordId });
+      if (!exists) {
+        await CadetList.create({ discordId: doc.discordId });
+        console.log(`Added ${doc.discordId} to CadetList.`);
+      }
+    } catch (err) {
+      console.error('Error adding to CadetList:', err);
+    }
+  }
+  next();
+});
+
 module.exports = mongoose.model('User', userSchema);
