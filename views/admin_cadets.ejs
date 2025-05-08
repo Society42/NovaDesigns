@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Cadet List</title>
+  <link rel="stylesheet" href="/admin_cadets.css">
+</head>
+<body>
+    <nav class="navbar">
+        <div class="nav-logo">RST Police Database</div>
+        <div class="nav-links">
+          <a href="/home">Home</a>
+          <a href="/officers">Officers</a>
+          <a href="/admin">Admin</a>
+
+          <% if (user) { %>
+            <div class="user-dropdown">
+              <img src="<%= user.avatarURL || '/images/default-avatar.png' %>" alt="User Avatar" class="user-avatar">
+              <span class="username"><%= user.Username %></span>
+              <div class="dropdown-content">
+                <a href="/profile">View Profile</a>
+                <a href="/logout" class="logout-btn">Logout</a>
+              </div>
+            </div>
+          <% } else { %>
+            <a href="/auth/discord" class="discord-button">Login with Discord</a>
+          <% } %>
+        </div>
+      </nav>
+  <section class="cadet-list">
+    <h2>Cadet List</h2>
+    <table class="cadet-table">
+    <tr>
+      <th>Discord Username</th>
+      <th>Discord ID</th>
+      <th>Arrests</th>
+      <th>Ride Alongs</th>
+      <th>Warrants</th>
+      <th>Fines</th>
+      <th>Heists</th>
+      <th>Edit</th>
+    </tr>
+    <% cadets.forEach(cadet => { %>
+      <tr>
+        <form action="/admin/cadets/update/<%= cadet._id %>" method="POST">
+            <td><%= cadet.Username %></td>
+          <td><%= cadet.discordId %></td>
+          <td><input type="number" name="arrests" value="<%= cadet.arrests %>"></td>
+          <td><input type="number" name="rideAlongs" value="<%= cadet.rideAlongs %>"></td>
+          <td><input type="number" name="warrants" value="<%= cadet.warrants %>"></td>
+          <td><input type="number" name="fines" value="<%= cadet.fines %>"></td>
+          <td><input type="number" name="heists" value="<%= cadet.heists %>"></td>
+          <td><button class="btn" type="submit">Update</button></td>
+        </form>
+      </tr>
+    <% }); %>
+  </table>
+  </section>
+</body>
+</html>

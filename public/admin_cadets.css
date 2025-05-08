@@ -1,0 +1,197 @@
+body {
+    margin: 0;
+    font-family: 'Segoe UI', sans-serif;
+    background: #f4f7fa;
+    color: #333;
+  }
+    
+    .navbar {
+      background-color: #1f2b3a;
+      color: white;
+      padding: 15px 30px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+    
+    .nav-right {
+      display: flex;
+      align-items: center;
+      gap: 20px;
+    }
+  
+    .nav-logo {
+      font-weight: bolder;
+    }
+    
+    .nav-links {
+      display: flex;
+      align-items: center;
+      gap: 20px;
+    }
+    
+    .nav-links a {
+      color: white;
+      text-decoration: none;
+      font-weight: 500;
+    }
+    
+    .user-avatar {
+      width: 24px;
+      height: 24px;
+      border-radius: 50%;
+      object-fit: cover;
+      display: inline-block;
+      margin-right: 6px;
+      padding: 0;
+      border: none;
+    }
+    
+    .user-dropdown {
+      display: flex;
+      align-items: center;
+      position: relative;
+      gap: 6px;
+      cursor: pointer;
+      padding: 6px 10px;
+      border-radius: 6px;
+      background-color: rgba(255, 255, 255, 0.05); 
+      transition: background-color 0.2s ease;
+    }
+
+    .roster-dropdown {
+      display: flex;
+      align-items: center;
+      position: relative;
+      gap: 6px;
+      cursor: pointer;
+      padding: 6px 10px;
+      border-radius: 6px;
+    }
+  
+    .roster-dropdown:hover .dropdown-content {
+      display: block;
+    }  
+    
+    .user-dropdown:hover {
+      background-color: rgba(255, 255, 255, 0.1); 
+    }  
+    
+    .username {
+      font-weight: 500;
+      color: white;
+      white-space: nowrap;
+    }  
+  
+    .dropdown-content {
+      display: none;
+      position: absolute;
+      right: 0; 
+      top: 100%;
+      background-color: #333;
+      min-width: 160px;
+      z-index: 1;
+      border-radius: 4px;
+      box-shadow: 0px 8px 16px rgba(0, 0, 0, 0.2);
+    }  
+  
+    .dropdown-content a {
+      color: white;
+      padding: 12px 16px;
+      text-decoration: none;
+      display: block;
+    }
+  
+    .dropdown-content a:hover {
+      background-color: #575757;
+    }
+  
+    .user-dropdown:hover .dropdown-content {
+      display: block;
+    }
+    
+    .logout-btn {
+      color: #ff4d4d;
+      font-weight: bold;
+    }
+    
+    h1 {
+      margin: 0;
+    }
+    
+    .cadet-list {
+      padding: 20px;
+    }
+    
+    .cadet-table {
+      width: 100%;
+      border-collapse: collapse;
+      margin-top: 20px;
+      background-color: #fff;
+      border-radius: 8px;
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    }
+    
+    .cadet-table th,
+    .cadet-table td {
+      padding: 12px;
+      text-align: center;
+      border-bottom: 1px solid #ddd;
+    }
+    
+    .cadet-table th {
+      background-color: #1f2b3a;
+      color: white;
+    }
+    
+    .cadet-table tr:hover {
+      background-color: #f4f4f4;
+    }
+    
+    h2{
+      text-align: center;
+    }
+  
+  input[type="number"] {
+    width: 80px;
+    padding: 5px;
+    margin: 5px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    background-color: #f9f9f9;
+    text-align: center;
+  }
+  
+  input[type="number"]:focus {
+    outline: none;
+    border-color: #1f2b3a;
+    background-color: #fff;
+  }
+  
+  .btn {
+    padding: 6px 12px;
+    background-color: #4CAF50;
+    color: white;
+    border: none;
+    cursor: pointer;
+    border-radius: 4px;
+    font-weight: bold;
+    transition: background-color 0.3s ease;
+  }
+  
+  .btn:hover {
+    background-color: #45a049;
+  }
+  
+  form button[type="submit"] {
+    padding: 6px 12px;
+    font-weight: bold;
+    border-radius: 5px;
+    background-color: #2196F3;
+    color: white;
+    border: none;
+  }
+  
+  form button[type="submit"]:hover {
+    background-color: #0b7dda;
+  }

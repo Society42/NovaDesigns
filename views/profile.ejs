@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Cadet Profile - <%= user.Username %></title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="/profile.css">
+</head>
+<body>
+  <nav class="navbar">
+    <div class="nav-logo">RST Police Database</div>
+    <div class="nav-links">
+      <a href="/home">Home</a>
+      <div class="roster-dropdown">
+        <a class="username">Roster</a>
+        <div class="dropdown-content">
+          <a href="/officers">Officers</a>
+          <a href="/swat" class="logout-btn">Swat</a>
+          <a href="/internal-affairs" class="logout-btn">Internal Affairs</a>
+        </div>
+      </div>      
+        <a href="/admin">Admin</a>
+
+      <% if (user) { %>
+        <div class="user-dropdown">
+          <img src="<%= user.avatarURL || '/images/default-avatar.png' %>" alt="User Avatar" class="user-avatar">
+          <span class="username"><%= user.Username %></span>
+          <div class="dropdown-content">
+            <a href="/profile">View Profile</a>
+            <a href="/logout" class="logout-btn">Logout</a>
+          </div>
+        </div>
+      <% } else { %>
+        <a href="/auth/discord" class="discord-button">Login with Discord</a>
+      <% } %>
+    </div>
+  </nav>
+
+  <div class="container">
+    <div class="profile-header">
+      <% if (user.avatarURL) { %>
+        <img src="<%= user.avatarURL %>" alt="Avatar">
+      <% } %>
+      <h2>Cadet Progress for <%= user.Username %></h2>
+    </div>
+
+    <div class="profile-info">
+      <p><strong>Rank:</strong> <%= user.rank %></p>
+      <p><strong>Status:</strong> <%= user.status %></p>
+      <p><strong>Division:</strong> <%= user.division %></p>
+      <p><strong>Steam ID:</strong> <%= user.steamId || 'Not Linked' %></p>
+    </div>
+
+    <li>
+        <span class="checkmark">
+        <%= cadetList && cadetList.arrests >= 10 ? '✔️' : (cadetList && cadetList.arrests > 0 ? '–' : '❌') %>
+      </span> 10 Arrests
+          <span class="badge"><%= cadetList ? cadetList.arrests : 0 %> / 10</span>
+          <div class="progress-bar-container">
+            <div class="progress-bar <%= cadetList && cadetList.arrests >= 10 ? 'completed' : (cadetList && cadetList.arrests > 0 ? 'in-progress' : 'not-started') %>"
+                 style="width: <%= cadetList ? (cadetList.arrests / 10) * 100 : 0 %>%">
+            </div>
+          </div>
+        </li>          
+      
+        <li>
+            <span class="checkmark">
+            <%= cadetList && cadetList.rideAlongs >= 2 ? '✔️' : (cadetList && cadetList.rideAlongs > 0 ? '–' : '❌') %>
+          </span> 2 Ride Alongs
+          <span class="badge"><%= cadetList ? cadetList.rideAlongs : 0 %> / 2</span>
+          <div class="progress-bar-container">
+            <div class="progress-bar <%= cadetList && cadetList.rideAlongs >= 2 ? 'completed' : (cadetList && cadetList.rideAlongs > 0 ? 'in-progress' : 'not-started') %>"
+                 style="width: <%= cadetList ? (cadetList.rideAlongs / 2) * 100 : 0 %>%">
+            </div>
+          </div>
+        </li>
+      
+        <li>
+            <span class="checkmark">
+            <%= cadetList && cadetList.warrants >= 2 ? '✔️' : (cadetList && cadetList.warrants > 0 ? '–' : '❌') %>
+          </span> 2 Warrants
+          <span class="badge"><%= cadetList ? cadetList.warrants : 0 %> / 2</span>
+          <div class="progress-bar-container">
+            <div class="progress-bar <%= cadetList && cadetList.warrants >= 2 ? 'completed' : (cadetList && cadetList.warrants > 0 ? 'in-progress' : 'not-started') %>"
+                 style="width: <%= cadetList ? (cadetList.warrants / 2) * 100 : 0 %>%">
+            </div>
+          </div>
+        </li>
+      
+        <li>
+            <span class="checkmark">
+            <%= cadetList && cadetList.fines >= 5 ? '✔️' : (cadetList && cadetList.fines > 0 ? '–' : '❌') %>
+          </span> 5 Fines
+          <span class="badge"><%= cadetList ? cadetList.fines : 0 %> / 5</span>
+          <div class="progress-bar-container">
+            <div class="progress-bar <%= cadetList && cadetList.fines >= 5 ? 'completed' : (cadetList && cadetList.fines > 0 ? 'in-progress' : 'not-started') %>"
+                 style="width: <%= cadetList ? (cadetList.fines / 5) * 100 : 0 %>%">
+            </div>
+          </div>
+        </li>
+      
+        <li>
+          <span class="checkmark">
+            <%= cadetList && cadetList.heists >= 2 ? '✔️' : (cadetList && cadetList.heists > 0 ? '–' : '❌') %>
+          </span> Attend 2 Heists
+          <span class="badge"><%= cadetList ? cadetList.heists : 0 %> / 2</span>
+          <div class="progress-bar-container">
+            <div class="progress-bar <%= cadetList && cadetList.heists >= 2 ? 'completed' : (cadetList && cadetList.heists > 0 ? 'in-progress' : 'not-started') %>"
+                 style="width: <%= cadetList ? (cadetList.heists / 2) * 100 : 0 %>%">
+            </div>
+          </div>
+        </li>
+      </ul>      
+  </div>
+
+</body>
+</html>

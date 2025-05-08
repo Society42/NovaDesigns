@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Create a New Guide</title>
+</head>
+<body>
+  <header>
+    <h1>Create a New Guide</h1>
+    <form action="/admin/guides/create" method="POST">
+      <label for="title">Guide Title</label>
+      <input type="text" name="title" required><br>
+
+      <label for="content">Content</label><br>
+      <textarea name="content" rows="10" cols="50" required></textarea><br>
+
+      <label for="isPublic">Make this guide public</label>
+      <input type="checkbox" name="isPublic"><br>
+
+      <button type="submit">Create Guide</button>
+    </form>
+  </header>
+</body>
+</html>
